@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://phirb.gearhostpreview.com/login.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <!--Import Google Icon Font-->
+    <link href="./login.php_files/icon" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./login.php_files/materialize.css" media="screen,projection">
+    <link href="./login.php_files/css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./login.php_files/style.css" <!--let="" browser="" know="" website="" is="" optimized="" for="" mobile--="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="navbar-fixed z-depth-0">
+        <nav class="opaquenav">
+            <div class="container">
+                <a href="http://phirb.gearhostpreview.com/login.php#" class="brand-logo">islet</a>
+                <a href="http://phirb.gearhostpreview.com/login.php#" data-target="mobile-nav" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="http://phirb.gearhostpreview.com/index.php">Home</a>
+                    </li>
+					<li>
+                        <a href="http://phirb.gearhostpreview.com/about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="http://phirb.gearhostpreview.com/board.html">Board</a>
+                    </li>
+                    <li>
+                        <a href="http://phirb.gearhostpreview.com/login.php#services">Services</a>
+                    </li>
+					<li>
+						<a href="http://phirb.gearhostpreview.com/contact.html">Contact</a>
+					</li>
+                    
+                    <li>
+                        <a href="http://phirb.gearhostpreview.com/login.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <ul class="sidenav" id="mobile-nav">
+        <li>
+            <a href="http://phirb.gearhostpreview.com/index.php">Home</a>
+        </li>
+        <li>
+            <a href="http://phirb.gearhostpreview.com/board.html">Board</a>
+        </li>
+        <li>
+            <a href="http://phirb.gearhostpreview.com/login.php#services">Services</a>
+        </li>
+        <li>
+            <a href="http://phirb.gearhostpreview.com/about.html">About</a>
+        </li>
+        <li>
+            <a href="http://phirb.gearhostpreview.com/login.php">Login</a>
+        </li>
+    </ul>
+    <header>
+        <div class="nGrid-12">
+            <div class="showcase" id="scLogin">
+                <div class="scCover"></div>
+            </div>
+            <div class="cRow" id="loginCard">
+                <div class="card login">
+                    <div class="card-content">
+                        <div class="card-title teal-text">
+                            <h1>
+                                <i class="large material-icons" style="font-size: 70px">account_circle</i>
+                        </h1></div>
+                        <div class="card-action">
+						
+						<form action="http://phirb.gearhostpreview.com/php/log_in.php" ,="" method="post" onsubmit="return checkForm();" id="myForm">
+                            <div class="input-field">
+                                <input id="email" type="email" ,="" name="email" autocomplete="off">
+                                <label for="email">Email</label>
+                            </div>
+							
+                            <div class="input-field">
+                                <input id="password" type="password" ,="" name="password" autocomplete="off">
+                                <label for="password">Password</label>
+                            </div>
+                            <p>
+                                <input id="remember" type="checkbox" for="remember">
+                                <label>
+                                    <input type="checkbox">
+                                    <span>Remember Me</span>
+                                </label>
+                            </p>
+                            <div class="input-field">
+                                <div class="valign-wrapper">
+                                    <button class="btn outlined waves-effect waves-light" type="submit" name="action">Submit
+                                    </button>
+                                </div>
+                            </div>
+							</form>
+                            <a href="http://phirb.gearhostpreview.com/register.php">Don't have an account?</a>
+                        </div>
+                        
+						<script>
+						var temp = null;
+						var go = 1;
+							function checkForm(){
+								var email = document.getElementById('email').value;
+								var password = document.getElementById('password').value;
+								var thing = false;
+								var go = 1;
+
+								
+								if(email.length == 0){
+									M.toast({html: "Email cannot be empty"});
+									go = 0;		
+								}
+								if(password.length == 0){
+									M.toast({html: "Password cannot be empty"});
+									go=0;
+								}
+								if(go == 1){
+									
+									var ajax = new XMLHttpRequest();
+									var method = "GET";
+									var url = "php/getEmailandPass.php?q=" + email + "&ped=" + password;
+									var asynchronous = true;
+																
+									ajax.open(method, url, asynchronous);
+									ajax.send();
+									ajax.onreadystatechange = function(){
+										
+										if(this.readyState == 4 && this.status == 200){
+											temp = this.responseText;
+											
+											if(temp !== "lol1"){
+											M.toast({html: "Please check username or password again"});
+											go=0;
+										}
+										else{
+											document.forms['myForm'].submit();
+										}
+										}
+										thing = true;
+									};
+									
+								}
+								if(go == 1 && thing){	
+									return true;
+								}
+								else{
+									return false;
+								}
+						}						
+						</script>
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="./login.php_files/materialize.min.js.download"></script>
+
+    <script>
+        //Sidenav
+        const sideNav = document.querySelector('.sidenav');
+        M.Sidenav.init(sideNav, {});
+    </script><div class="sidenav-overlay"></div><div class="drag-target"></div>
+
+
+
+
+
+</body></html>

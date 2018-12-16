@@ -1,0 +1,147 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/style.css" <!-- Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/themify-icons.css">
+</head>
+
+<body>
+    <div class="navbar-fixed z-depth-0" id="dashboard">
+        <nav class="opaquenav">
+            <div class="nav-wrapper">
+
+                <a href="#" data-target="mobile-nav" class="sidenav-trigger show-on-large">
+                    <i class="material-icons">menu</i>
+                </a>
+                <a href="#" class="brand-logo">islet</a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li  class="active">
+                        <a href="board.html">Board</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-trigger" href="#!" data-target="services1">Services
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="login.php">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <ul id='services1' class='dropdown-content'>
+        <li>
+            <a href="#!">Advertising</a>
+        </li>
+        <li>
+            <a href="#!">Web Design</a>
+        </li>
+        <li>
+            <a href="#!">Media</a>
+        </li>
+    </ul>
+
+    <ul id='services2' class='dropdown-content'>
+        <li>
+            <a href="#!">Advertising</a>
+        </li>
+        <li>
+            <a href="#!">Web Design</a>
+        </li>
+        <li>
+            <a href="#!">Media</a>
+        </li>
+    </ul>
+
+    <ul class="sidenav draggable preventScrolling" id="mobile-nav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="img/bg1.jpg">
+                </div>
+                <a href="#user">
+                    <img class="circle" src="img/profilepic.png">
+                </a>
+                <a href="#name">
+                    <span class="white-text name">Adumb Hoe</span>
+                </a>
+                <a href="#email">
+                    <span class="white-text email">adumbsahoe@hotmail.com</span>
+                </a>
+            </div>
+        </li>
+        <li>
+            <a href="#!">
+                <i class="material-icons">settings</i>Account Settings</a>
+        </li>
+        <li>
+            <a href="#home">Home</a>
+        </li>
+        <li>
+            <a href="#about">About</a>
+        </li>
+        <li>
+            <a href="#board">Board</a>
+        </li>
+        <li>
+            <a class="dropdown-trigger" href="#!" data-target="services2">Services
+                <i class="material-icons right">arrow_drop_down</i>
+            </a>
+        </li>
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+        <li>
+            <a href="#login">Login</a>
+        </li>
+        <li>
+            <a href="#login">Login</a>
+
+        </li>
+        <li>
+            <a href="#login">Login</a>
+        </li>
+        <li>
+            <a href="#login">Login</a>
+        </li>
+        <li>
+            <a href="#login">Login</a>
+        </li>
+    </ul>
+
+    <ul id="slide-out" class="sidenav">
+
+    </ul>
+
+</body>
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script>
+    //Sidenav
+    const sideNav = document.querySelector('.sidenav');
+    M.Sidenav.init(sideNav, {});
+
+    const dropDown = document.querySelectorAll('.dropdown-trigger');
+    M.Dropdown.init(dropDown, {});
+</script>
+
+</html>
